@@ -1,0 +1,86 @@
+form[name="keyForm"] 
+{ 
+    width: 400px; 
+}
+
+form[name="allKeyForm"] 
+{ 
+    width: 400px; 
+}
+
+p 
+{
+    font-weight: bold;
+}
+
+
+#content
+{
+    position: absolute;
+    height: auto;
+    width: 100%;
+    min-width: 920px;
+    min-height: 400px;
+}
+
+#contentFull
+{
+    position: absolute;
+    height: auto;
+    width: 100%;
+    min-width: 1200px;
+    min-height: 400px;
+}
+
+#music 
+{ 
+    position: absolute;
+    height: auto;
+    min-width: 740px;
+    left: 10px;
+    top: 1px;
+    bottom: 40px;
+    width: 48%;
+} 
+
+#login 
+{ 
+    position: absolute;
+    height: auto;
+    right: 40px;
+    top: 1px;
+    bottom: 40px;
+    width: 18%;
+}
+
+#musicFull 
+{ 
+    position: absolute;
+    height: auto;
+    min-width: 332px;
+    left: 10px;
+    top: 1px;
+    bottom: 40px;
+    width: 332px;
+} 
+
+#logout 
+{ 
+    position: absolute;
+    height: auto;
+    right: 40px;
+    top: 10px;
+    bottom: 40px;
+    width: 55%;
+    min-width: 730px;
+}
+
+#chords 
+{ 
+    position: absolute;
+    min-width: 703px;
+    top: 305px;
+    width: 58%;
+    height: auto;
+    padding-left: 10px;
+}
