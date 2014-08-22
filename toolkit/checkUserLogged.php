@@ -3,7 +3,7 @@
 *  Desc: Contains the code for checking the $_SESSION array to 
 *  see if a user is already logged in and redirects them to the 
 *  main application page if so. If not, the code will attempt to 
-*  log the user in via cookies if they are set. 
+*  log the user in via cookies if they are set.  
 */
 
 if ((isset($_SESSION['auth'])) && ($_SESSION['auth'] == 'yes')) 
