@@ -21,22 +21,22 @@ class MusicDB
 
 		$result = $this->myNewConnection->query($this->myQuery);
 		
-		while($row = mysqli_fetch_row($result)) 
+		while($row = mysqli_fetch_row($result))
 		{
-    		$rows[] = $row;
-    	}
+			$rows[] = $row;
+		}
 		
-		for ($i=0; $i < sizeof($rows) ; $i++)  
-		{ 	
+		for ($i=0; $i < sizeof($rows) ; $i++)
+		{	
 			//takes 2nd dimension of array and returns as single
-    		for ($j=0; $j < (sizeof($rows, 1) - 1) ; $j++)  
-    		{  
-        		$musicArray[$j] = $rows[$i][$j]; 
-    		} 
-		} 
+			for ($j=0; $j < (sizeof($rows, 1) - 1) ; $j++)
+			{
+				$musicArray[$j] = $rows[$i][$j];
+			}
+		}
 
 		return $musicArray;
-  	}
+	}
 	
 	public function getRelativeKeyChords($tonic, $tonality)
 	{
@@ -55,18 +55,18 @@ class MusicDB
 		//only returning a single row, no while loop necessary, so same logic could also apply to getRelativeKeyChords above
 		//see commented out code below
 		return $row;
-		/*while($row = mysqli_fetch_row($result)) 
+		/*while($row = mysqli_fetch_row($result))
 		{
-    		$rows[] = $row;
-    	}
+			$rows[] = $row;
+		}
 		//return $rows;
-		for ($i=0; $i < sizeof($rows) ; $i++)  
+		for ($i=0; $i < sizeof($rows) ; $i++)
 		{ 
-    		for ($j=0; $j < (sizeof($rows, 1) - 1) ; $j++)  
-    		{  
-        		$musicArray[$j] = $rows[$i][$j]; 
-    		} 
- 		} 
+			for ($j=0; $j < (sizeof($rows, 1) - 1) ; $j++)
+			{
+				$musicArray[$j] = $rows[$i][$j];
+			} 
+		} 
 
 		return $musicArray;*/
 	}
@@ -79,7 +79,7 @@ class MusicDB
 		
 		$row = mysqli_fetch_assoc($result);
 		//refernce for chord image file 
-		return $row["image_path"];               
+		return $row["image_path"];
 	}
 }
 ?>

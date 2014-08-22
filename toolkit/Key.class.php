@@ -14,93 +14,93 @@ class Key
 {
 	private $root;
 	private $tonality;
-    private $tonic;
+	private $tonic;
 	private $relativeKey;
 	private $keyChords = array();
 	private $relativeKeyChords = array();
 	
-    public function __construct($note, $tonality) 
-    {
-        global $keyMusicDB;
-        include('dbConfig.php');
-        
-        $this->keyMusicDB = new MusicDB($host, $user, $password, $database);
-        $this->tonality = $tonality;
-        
-    	if ($tonality == "minor") 
-    	{
+	public function __construct($note, $tonality)
+	{
+		global $keyMusicDB;
+		include('dbConfig.php');
+		
+		$this->keyMusicDB = new MusicDB($host, $user, $password, $database);
+		$this->tonality = $tonality;
+		
+		if ($tonality == "minor")
+		{
 
-            switch ($note) 
-            {
-                case 'Db':
-                    $this->root = 'C#';
-                    break;
+			switch ($note)
+			{
+				case 'Db':
+				$this->root = 'C#';
+				break;
 
-                case 'Eb':
-                    $this->root = 'D#';
-                    break;
+				case 'Eb':
+				$this->root = 'D#';
+				break;
 
-                case 'Ab':
-                    $this->root = 'G#';
-                    break;
-                    
-                default:
-                    $this->root = $note;
-                    break;
-            }
+				case 'Ab':
+				$this->root = 'G#';
+				break;
+				
+				default:
+				$this->root = $note;
+				break;
+			}
 
-            $this->tonic = $this->root ."m";   
-        } 
-        else
-        {
-            $this->root = $note;
-            $this->tonic = $this->root;
-        }   
-    	
-    	
-        $this->setKeyChords();
-        $this->setRelativeKeyAndChords();
-    }
+			$this->tonic = $this->root ."m";
+		}
+		else
+		{
+			$this->root = $note;
+			$this->tonic = $this->root;
+		}
+		
+		
+		$this->setKeyChords();
+		$this->setRelativeKeyAndChords();
+	}
 
-    public function setKeyChords()
-    {
-        $this->keyChords = $this->keyMusicDB->getKeyChords($this->tonic, $this->tonality);
-    }
-    
-    public function setRelativeKeyAndChords()
-    {
-        $this->relativeKeyChords = $this->keyMusicDB->getRelativeKeyChords($this->tonic, $this->tonality);
-        $this->relativeKey = $this->relativeKeyChords[0];
-    }
+	public function setKeyChords()
+	{
+		$this->keyChords = $this->keyMusicDB->getKeyChords($this->tonic, $this->tonality);
+	}
+	
+	public function setRelativeKeyAndChords()
+	{
+		$this->relativeKeyChords = $this->keyMusicDB->getRelativeKeyChords($this->tonic, $this->tonality);
+		$this->relativeKey = $this->relativeKeyChords[0];
+	}
 
-    public function getKeyChordImages()
-    {
-       for ($i=0; $i < sizeof($this->keyChords); $i++)  
-        {  
-            $chordImages[$i] = $this->keyMusicDB->displayChord($this->keyChords[$i]); 
-        } 
+	public function getKeyChordImages()
+	{
+		for ($i=0; $i < sizeof($this->keyChords); $i++)
+		{  
+			$chordImages[$i] = $this->keyMusicDB->displayChord($this->keyChords[$i]); 
+		} 
 
-        return $chordImages;
-    }
+		return $chordImages;
+	}
 
-    public function getRelativeKeyChordImages()
-    {
-        for ($i=0; $i < sizeof($this->relativeKeyChords); $i++)  
-        {  
-            $relativeChordImages[$i] = $this->keyMusicDB->displayChord($this->relativeKeyChords[$i]); 
-        } 
+	public function getRelativeKeyChordImages()
+	{
+		for ($i=0; $i < sizeof($this->relativeKeyChords); $i++)
+		{
+			$relativeChordImages[$i] = $this->keyMusicDB->displayChord($this->relativeKeyChords[$i]);
+		}
 
-        return $relativeChordImages;
-    }
-    
-    public function getKeyName()
-    {
-        return $this->root . ' ' . $this->tonality;
-    }
-    
-    public function getRelativeKeyName()
-    {
-        return $this->relativeKey;
-    }
+		return $relativeChordImages;
+	}
+	
+	public function getKeyName()
+	{
+		return $this->root . ' ' . $this->tonality;
+	}
+	
+	public function getRelativeKeyName()
+	{
+		return $this->relativeKey;
+	}
 }
 ?>

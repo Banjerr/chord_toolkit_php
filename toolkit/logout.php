@@ -10,14 +10,14 @@ session_start();
 
 if (isset($_SESSION['logName'])) 
 {
-    $_SESSION = array();
-    
-    if (isset($_COOKIE[session_name()])) 
-    {
-        setcookie(session_name(), '', time() - 3600);
-    }
-    
-    session_destroy();
+	$_SESSION = array();
+
+	if (isset($_COOKIE[session_name()]))
+	{
+		setcookie(session_name(), '', time() - 3600);
+	}
+
+	session_destroy();
 }
 
 setcookie('user_id', '', time() - 3600);

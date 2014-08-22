@@ -8,18 +8,18 @@
 
 if ((isset($_SESSION['auth'])) && ($_SESSION['auth'] == 'yes')) 
 {
-    header('Location: musicTheory.php');
-    exit();
+	header('Location: musicTheory.php');
+	exit();
 }
 else if (!isset($_SESSION['auth'])) 
 {
-    if (isset($_COOKIE['user_id']) && isset($_COOKIE['logName'])) 
-    {
-        session_start(); 
-        $_SESSION['logName'] = $_COOKIE['logName'];
-        $_SESSION['auth'] = 'yes';
-        header('Location: musicTheory.php');
-        exit();
-    }
+	if (isset($_COOKIE['user_id']) && isset($_COOKIE['logName'])) 
+	{
+		session_start(); 
+		$_SESSION['logName'] = $_COOKIE['logName'];
+		$_SESSION['auth'] = 'yes';
+		header('Location: musicTheory.php');
+		exit();
+	}
 }
 ?>
