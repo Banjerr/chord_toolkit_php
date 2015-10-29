@@ -1,26 +1,93 @@
-form[name="keyForm"] 
-{ 
-    width: 400px; 
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- NORMALIZE
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+@import url('normalize.css');
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+UTILITY STYLES
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+.ubuntu {
+  font-family: 'Ubuntu Condensed', sans-serif;
 }
 
-form[name="allKeyForm"] 
-{ 
-    width: 400px; 
+.greenText {
+  color: #758918;
 }
 
-p 
+.greenBG {
+  background-color: #758918;
+}
+
+.brownText {
+  color: #49281F;
+}
+
+.brownBG {
+  background-color: #49281F;
+}
+
+body, h2, h3, h4, h5, h6, p, input, select, ul li {
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.greenBtn, input[type="submit"] {
+    background-color: #758918;
+    color: #49281F;
+    padding: 2% 0;
+    transition: all .2s ease-out;
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    padding: 2% 4%;
+    margin: 2% 0;
+}
+
+.greenBtn:hover, input[type="submit"]:hover {
+  background-color: #49281F;
+  color: #758918;
+  box-shadow: 0 0 12px #758918;
+  border-radius: 6px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+/*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-GENERAL =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+form[name="keyForm"]
+{
+    width: 400px;
+}
+
+form[name="allKeyForm"]
+{
+    width: 400px;
+}
+
+input[type="text"], input[type="password"]
+{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    padding: 2% 0 2% 4%;
+    width: 98%;
+}
+
+p
 {
     font-weight: bold;
 }
 
 
-#content
-{
-    position: absolute;
+#content {
+    position: relative;
     height: auto;
     width: 100%;
     min-width: 920px;
     min-height: 400px;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 #contentFull
@@ -32,29 +99,22 @@ p
     min-height: 400px;
 }
 
-#music 
-{ 
-    position: absolute;
+#music {
+    position: relative;
     height: auto;
-    min-width: 740px;
-    left: 10px;
-    top: 1px;
-    bottom: 40px;
     width: 48%;
-} 
-
-#login 
-{ 
-    position: absolute;
-    height: auto;
-    right: 40px;
-    top: 1px;
-    bottom: 40px;
-    width: 18%;
+    float: left;
 }
 
-#musicFull 
-{ 
+#login {
+    position: relative;
+    height: auto;
+    width: 18%;
+    float: right;
+}
+
+#musicFull
+{
     position: absolute;
     height: auto;
     min-width: 332px;
@@ -62,10 +122,10 @@ p
     top: 1px;
     bottom: 40px;
     width: 332px;
-} 
+}
 
-#logout 
-{ 
+#logout
+{
     position: absolute;
     height: auto;
     right: 40px;
@@ -75,12 +135,15 @@ p
     min-width: 730px;
 }
 
-#chords 
-{ 
-    position: absolute;
-    min-width: 703px;
-    top: 305px;
-    width: 58%;
+#chords {
+    position: relative;
+    width: 74%;
     height: auto;
-    padding-left: 10px;
+    clear: both;
+}
+
+.spacer {
+    width: 44px;
+    display: inline-block;
+    text-align: center;
 }

@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* Program: freeMusicTheory.php
-*  Desc: Contains the code for the limited/free application. It will construct 
+*  Desc: Contains the code for the limited/free application. It will construct
 *  an Object of the Key class depending on the variables POSTed to it.
 *  It then computes what chords to display using functions of the Key Object and
 *  displays these chords to the browser by including the "formatChordDisplay.php" script/program.
@@ -10,8 +10,8 @@
 include('Key.class.php');
 include('checkUserLogged.php');
 
-if (isset($_POST["myKey"])) 
-{ 
+if (isset($_POST["myKey"]))
+{
 	$userNote = $_POST["myKey"];
 	$userTonality = $_POST["myTonality"];
 
@@ -25,21 +25,22 @@ if (isset($_POST["myKey"]))
 	<head>
 		<title>Songwriting Chord Toolkit</title>
 		<link rel = "stylesheet" href = "myStyle.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
-	
+
 		<div id = 'content'>
 
-			<?php 
-			include("formCode.php"); 
+			<?php
+			include("formCode.php");
 			?>
-		
+
 			<div id = 'chords'></br>
-				
-				<?php 
-				if (isset($_POST["myKey"])) 
-				{ 
+
+				<?php
+				if (isset($_POST["myKey"]))
+				{
 					include("formatChordDisplay.php");
 				}
 				?>

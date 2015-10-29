@@ -5,7 +5,7 @@
 *  This script is included both the free and main application where chords are displayed.
 */
 
-$tab = '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp';
+$tab = '<span class="spacer"></span>';
 $tabs = $tab . $tab;
 
 echo '<p>Chords available in the Key of ' . $userKey->getKeyName() . '.</p>';
@@ -21,9 +21,9 @@ else
 }
 
 for ($i=0; $i < sizeof($chordsToDisplay); $i++)
-{  
+{
 	echo ('<img src="'.$chordsToDisplay[$i].'">');
-} 
+}
 
 echo "</br></br></br>";
 
@@ -39,10 +39,10 @@ else
 }
 
 
-for ($i=0; $i < sizeof($relativeChordsToDisplay); $i++)  
-{  
+for ($i=0; $i < sizeof($relativeChordsToDisplay); $i++)
+{
 	echo ('<img src="'.$relativeChordsToDisplay[$i].'">');
-} 
+}
 
 echo "</br></br>";
 ?>
